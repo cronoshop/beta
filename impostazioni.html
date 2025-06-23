@@ -1,0 +1,75 @@
+La pagina con le impostazioni di personalizzazione del tema.
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impostazioni - CronoShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="page-container">
+        <header class="main-header">
+             <div class="logo">
+                <a href="index.html"><strong>Crono</strong>Shop</a>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">HOME</a>
+                <a href="faq.html">FAQ</a>
+                <a href="prodotti.html">PRODOTTI</a>
+                <a href="gruppi.html">GRUPPI</a>
+                <a href="classifiche.html">CLASSIFICHE</a>
+                <a href="statistiche.html">STATISTICHE</a>
+            </nav>
+            <div class="user-actions">
+                <a href="account.html"><i class="fa-solid fa-user"></i></a>
+                <a href="impostazioni.html" class="active-icon"><i class="fa-solid fa-cog"></i></a>
+            </div>
+        </header>
+
+        <main class="content-page">
+            <h1 class="page-title">Impostazioni Aspetto</h1>
+            <div class="settings-grid">
+                <div class="setting-card">
+                    <h2>Scegli il tuo tema</h2>
+                    <div class="theme-options">
+                        <div class="theme-option">
+                            <input type="radio" id="light-theme" name="theme" value="light">
+                            <label for="light-theme">
+                                <i class="fa-solid fa-sun"></i> Chiaro
+                            </label>
+                        </div>
+                         <div class="theme-option">
+                            <input type="radio" id="dark-theme" name="theme" value="dark">
+                            <label for="dark-theme">
+                                <i class="fa-solid fa-moon"></i> Scuro
+                            </label>
+                        </div>
+                         <div class="theme-option">
+                            <input type="radio" id="glass-theme" name="theme" value="glass">
+                            <label for="glass-theme">
+                                <i class="fa-solid fa-square-check"></i> Glass
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting-card">
+                    <h2>Tinta personalizzata</h2>
+                    <p>Scegli un colore per i dettagli principali. Funziona al meglio con il tema Chiaro o Scuro.</p>
+                    <div class="tint-option">
+                        <input type="radio" id="tint-theme" name="theme" value="tint">
+                        <label for="tint-theme">Attiva Tinta</label>
+                        <input type="color" id="tint-color-picker" value="#007aff">
+                    </div>
+                 </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,248 @@
+Questo file contiene tutto lo stile del sito, incluse le variabili per i temi.
+/* 1. VARIABILI E STILI GLOBALI */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #212529;
+    --page-bg: #f8f9fa;
+    --header-bg: rgba(255, 255, 255, 0.8);
+    --card-bg: #ffffff;
+    --border-color: #e9ecef;
+    --primary-accent: #000000;
+    --secondary-accent: #6c757d;
+    --backdrop-filter: blur(10px);
+    --btn-primary-text: #ffffff;
+}
+
+html.dark-theme {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --page-bg: #000000;
+    --header-bg: rgba(24, 24, 24, 0.7);
+    --card-bg: #1e1e1e;
+    --border-color: #333333;
+    --primary-accent: #ffffff;
+    --secondary-accent: #a0a0a0;
+    --btn-primary-text: #000000;
+}
+
+html.glass-theme {
+    --header-bg: rgba(255, 255, 255, 0.5);
+    --card-bg: rgba(255, 255, 255, 0.6);
+    --border-color: rgba(255, 255, 255, 0.2);
+}
+
+html.dark-theme.glass-theme {
+    --header-bg: rgba(20, 20, 20, 0.5);
+    --card-bg: rgba(30, 30, 30, 0.6);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--page-bg);
+    color: var(--text-color);
+    margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. HEADER E NAVIGAZIONE */
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--header-bg);
+    backdrop-filter: var(--backdrop-filter);
+    -webkit-backdrop-filter: var(--backdrop-filter);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.logo strong {
+    font-weight: 700;
+}
+
+.main-nav { display: flex; gap: 25px; }
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--secondary-accent);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.main-nav a:hover { color: var(--primary-accent); }
+
+.main-nav a.active {
+    color: var(--text-color);
+    font-weight: 700;
+    border-bottom: 2px solid var(--primary-accent);
+}
+
+.user-actions { display: flex; gap: 20px; font-size: 1.2rem; }
+.user-actions a { color: var(--secondary-accent); transition: color 0.2s ease; }
+.user-actions a:hover, .user-actions a.active-icon { color: var(--primary-accent); }
+
+/* 3. SEZIONI PRINCIPALI (HERO, CONTENT) */
+.hero-section {
+    text-align: center;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-title, .hero-section h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    color: var(--text-color);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--secondary-accent);
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.content-page { padding: 40px 0; }
+
+/* 4. PULSANTI */
+.btn {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primary {
+    background-color: var(--primary-accent);
+    color: var(--btn-primary-text);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--secondary-accent);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover { background-color: var(--card-bg); }
+
+/* 5. FOOTER BANNER */
+.whatsapp-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-bg);
+    padding: 20px 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-top: 40px;
+}
+
+.banner-content { display: flex; align-items: center; gap: 15px; font-weight: 500; }
+.banner-content .fa-whatsapp { font-size: 2rem; color: #25D366; }
+
+/* 6. PAGINA PRODOTTI */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+}
+
+.product-card-img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    background-color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.product-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-card-body h3 { margin: 0 0 10px 0; font-size: 1.1rem; }
+.product-card-body .price { margin: 0 0 10px 0; font-size: 1.2rem; font-weight: bold; color: var(--primary-accent); }
+.product-card-body .description {
+    font-size: 0.9rem;
+    color: var(--secondary-accent);
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+.product-card-body .btn { width: 100%; text-align: center; box-sizing: border-box; }
+
+/* 7. PAGINA FAQ */
+.faq-item {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 15px;
+}
+.faq-item h2 { margin-top: 0; }
+
+/* 8. PAGINA IMPOSTAZIONI */
+.settings-grid { display: grid; gap: 20px; }
+.setting-card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+.setting-card h2 { margin-top: 0; }
+.theme-options { display: flex; flex-wrap: wrap; gap: 20px; }
+.theme-option, .tint-option { display: flex; align-items: center; gap: 10px; }
+.theme-option label, .tint-option label { cursor: pointer; display: flex; align-items: center; gap: 8px;}
+input[type="color"] { border: none; background: none; width: 40px; height: 40px; cursor: pointer; }
+
